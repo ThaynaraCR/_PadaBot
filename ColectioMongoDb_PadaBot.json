@@ -1,0 +1,463 @@
+[{
+  "_id": {
+    "$oid": "5f8388389c432a20a4229c48"
+  },
+  "input": "oi",
+  "output": "Olá, eu sou o Padabot, assistente virtual da Padaria Melhor Pão! Estou aqui para melhor atendê-lo, evitando que você enfrente filas retirando seu pedido apenas com o comprovante de pagamento! Para começar me diga seu nome:"
+},{
+  "_id": {
+    "$oid": "5f839a2ccf8625234cc417d1"
+  },
+  "input": "maria",
+  "output": "Ok,Maria .Diga-me o que deseja: Pão Doce (R$0,80 cada), Pão Frances(R$0,30 cada), Leite(R$5,80 1Litro), Refrigerante(Coca R$10,00 - Fanta R$8,00), Frios(Muçarela-R$2,00-100g - presunto-R$1,80-100g - mortadela-R$2,20-100g) Escreva somente o nome do produto como na descrição, quantidade(no máximo 10), por ex:  Pão Frances,1  ou Leite,1 se for frios coloque gramas(100g,200g no máximo 500g) por ex: Muçarela,200g. Se for refrigerante escreva qual ex: coca-cola,1. Sua vez!"
+},{
+  "_id": {
+    "$oid": "5f83b413a8c8883930e9d664"
+  },
+  "input": "paodoce1",
+  "output": "ok,1 pao doce. O valor é R$0,80. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f83b424a8c8883930e9d665"
+  },
+  "input": "paodoce2",
+  "output": "ok, 2 paes doce. O valor é R$1,60. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c68dcb2ec2526d4c4657c"
+  },
+  "input": "paodoce3",
+  "output": "ok, 3 paes doce. O valor é R$2,40. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6908b2ec2526d4c4657d"
+  },
+  "input": "paodoce4",
+  "output": "ok, 4 paes doce. O valor é R$3,20. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c690db2ec2526d4c4657e"
+  },
+  "input": "paodoce5",
+  "output": "ok, 5 paes doce. O valor é R$4,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6913b2ec2526d4c4657f"
+  },
+  "input": "paodoce6",
+  "output": "ok, 6 paes doce. O valor é R$4,80. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6916b2ec2526d4c46580"
+  },
+  "input": "paodoce7",
+  "output": "ok, 7 paes doce. O valor é R$5,60. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c691bb2ec2526d4c46581"
+  },
+  "input": "paodoce8",
+  "output": "ok, 8 paes doce. O valor é R$6,40. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c691eb2ec2526d4c46582"
+  },
+  "input": "paodoce9",
+  "output": "ok, 9 paes doce. O valor é R$7,20. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6922b2ec2526d4c46583"
+  },
+  "input": "paodoce10",
+  "output": "ok, 10 paes doce. O valor é R$8,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6af1b2ec2526d4c46584"
+  },
+  "input": "paofrances1",
+  "output": "ok, 1 pao frances. O valor é R$0,30. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6af8b2ec2526d4c46585"
+  },
+  "input": "paofrances2",
+  "output": "ok, 2 paes frances. O valor é R$0,60. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6bfeb2ec2526d4c46586"
+  },
+  "input": "paofrances3",
+  "output": "ok, 3 paes frances. O valor é R$0,90. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6c03b2ec2526d4c46587"
+  },
+  "input": "paofrances4",
+  "output": "ok, 4 paes frances. O valor é R$1,20. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6c09b2ec2526d4c46588"
+  },
+  "input": "paofrances5",
+  "output": "ok, 5 paes frances. O valor é R$1,50. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6c0eb2ec2526d4c46589"
+  },
+  "input": "paofrances6",
+  "output": "ok, 6 paes frances. O valor é R$1,80. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6c13b2ec2526d4c4658a"
+  },
+  "input": "paofrances7",
+  "output": "ok, 7 paes frances. O valor é R$2,10. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6c17b2ec2526d4c4658b"
+  },
+  "input": "paofrances8",
+  "output": "ok, 8 paes frances. O valor é R$2,40. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6c1cb2ec2526d4c4658c"
+  },
+  "input": "paofrances9",
+  "output": "ok, 9 paes frances. O valor é R$2,70. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c6c21b2ec2526d4c4658d"
+  },
+  "input": "paofrances10",
+  "output": "ok, 10 paes frances. O valor é R$3,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c756ab2ec2526d4c4658e"
+  },
+  "input": "leite1",
+  "output": "ok, 1 leite. O valor é R$4,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c758db2ec2526d4c4658f"
+  },
+  "input": "leite2",
+  "output": "ok, 2 caixas de leite de 1 litro. O valor é R$8,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7593b2ec2526d4c46590"
+  },
+  "input": "leite3",
+  "output": "ok, 3 caixas de leite de 1 litro. O valor é R$12,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7598b2ec2526d4c46591"
+  },
+  "input": "leite4",
+  "output": "ok, 4 caixas de leite de 1 litro. O valor é R$16,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c759cb2ec2526d4c46592"
+  },
+  "input": "leite5",
+  "output": "ok, 5 caixas de leite de 1 litro. O valor é R$20,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c75a2b2ec2526d4c46593"
+  },
+  "input": "leite6",
+  "output": "ok, 6 caixas de leite de 1 litro. O valor é R$24,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c75a6b2ec2526d4c46594"
+  },
+  "input": "leite7",
+  "output": "ok, 7 caixas de leite de 1 litro. O valor é R$28,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c75abb2ec2526d4c46595"
+  },
+  "input": "leite8",
+  "output": "ok, 8 caixas de leite de 1 litro. O valor é R$32,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c75afb2ec2526d4c46596"
+  },
+  "input": "leite9",
+  "output": "ok, 9 caixas de leite de 1 litro. O valor é R$36,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c75b3b2ec2526d4c46597"
+  },
+  "input": "leite10",
+  "output": "ok, 10 caixas de leite de 1 litro. O valor é R$40,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7834b2ec2526d4c46598"
+  },
+  "input": "cocacola1",
+  "output": "ok, 1 coca-cola. O valor é R$10,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c3ab2ec2526d4c46599"
+  },
+  "input": "cocacola2",
+  "output": "ok,  coca-cola, 2. O valor é R$20,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c43b2ec2526d4c4659a"
+  },
+  "input": "cocacola3",
+  "output": "ok,  coca-cola, 3. O valor é R$30,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c48b2ec2526d4c4659b"
+  },
+  "input": "cocacola4",
+  "output": "ok,  coca-cola, 4. O valor é R$40,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c4bb2ec2526d4c4659c"
+  },
+  "input": "cocacola5",
+  "output": "ok,  coca-cola, 5. O valor é R$50,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c4fb2ec2526d4c4659d"
+  },
+  "input": "cocacola6",
+  "output": "ok,  coca-cola, 6. O valor é R$60,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c51b2ec2526d4c4659e"
+  },
+  "input": "cocacola7",
+  "output": "ok,  coca-cola, 7. O valor é R$70,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c55b2ec2526d4c4659f"
+  },
+  "input": "cocacola8",
+  "output": "ok,  coca-cola, 8. O valor é R$80,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c59b2ec2526d4c465a0"
+  },
+  "input": "cocacola9",
+  "output": "ok,  coca-cola, 9. O valor é R$90,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7c5db2ec2526d4c465a1"
+  },
+  "input": "cocacola10",
+  "output": "ok,  coca-cola, 10. O valor é R$100,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7dfbb2ec2526d4c465a2"
+  },
+  "input": "fanta1",
+  "output": "ok, fanta, 1. O valor é R$9,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e06b2ec2526d4c465a3"
+  },
+  "input": "fanta2",
+  "output": "ok, fanta, 2. O valor é R$18,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e0ab2ec2526d4c465a4"
+  },
+  "input": "fanta3",
+  "output": "ok, fanta, 3. O valor é R$27,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e0db2ec2526d4c465a5"
+  },
+  "input": "fanta4",
+  "output": "ok, fanta, 4. O valor é R$36,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e10b2ec2526d4c465a6"
+  },
+  "input": "fanta5",
+  "output": "ok, fanta, 5. O valor é R$45,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e14b2ec2526d4c465a7"
+  },
+  "input": "fanta6",
+  "output": "ok, fanta, 6. O valor é R$54,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e17b2ec2526d4c465a8"
+  },
+  "input": "fanta7",
+  "output": "ok, fanta, 7. O valor é R$63,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e1ab2ec2526d4c465a9"
+  },
+  "input": "fanta8",
+  "output": "ok, fanta, 8. O valor é R$72,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e1db2ec2526d4c465aa"
+  },
+  "input": "fanta9",
+  "output": "ok, fanta, 9. O valor é R$81,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7e20b2ec2526d4c465ab"
+  },
+  "input": "fanta10",
+  "output": "ok, fanta, 10. O valor é R$90,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7f27b2ec2526d4c465ac"
+  },
+  "input": "mucarela100g",
+  "output": "ok,muçarela,100g. O valor é R$2,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7f41b2ec2526d4c465ad"
+  },
+  "input": "mucarela200g",
+  "output": "ok,muçarela,200g. O valor é R$4,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7f56b2ec2526d4c465ae"
+  },
+  "input": "mucarela300g",
+  "output": "ok,muçarela,300g. O valor é R$6,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7facb2ec2526d4c465af"
+  },
+  "input": "mucarela400g",
+  "output": "ok,muçarela,400g. O valor é R$8,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7fbdb2ec2526d4c465b0"
+  },
+  "input": "mucarela500g",
+  "output": "ok,muçarela,500g. O valor é R$10,00. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7fd7b2ec2526d4c465b1"
+  },
+  "input": "presunto100g",
+  "output": "ok,presunto,100g. O valor é R$1,80. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7fe9b2ec2526d4c465b2"
+  },
+  "input": "presunto200g",
+  "output": "ok,presunto,200g. O valor é R$3,60. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c7ffbb2ec2526d4c465b3"
+  },
+  "input": "presunto300g",
+  "output": "ok,presunto,300g. O valor é R$5,40. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c8013b2ec2526d4c465b4"
+  },
+  "input": "presunto400g",
+  "output": "ok,presunto,400g. O valor é R$6,80. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c818db2ec2526d4c465b5"
+  },
+  "input": "presunto500g",
+  "output": "ok,presunto,500g. O valor é R$8,60. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c8240b2ec2526d4c465b6"
+  },
+  "input": "mortadela100g",
+  "output": "ok,mortadela,100g. O valor é R$2,10. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c88b2b2ec2526d4c465b7"
+  },
+  "input": "mortadela200g",
+  "output": "ok,mortadela,200g. O valor é R$4,20. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c88ceb2ec2526d4c465b8"
+  },
+  "input": "mortadela300g",
+  "output": "ok,mortadela,300g. O valor é R$6,30. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c890eb2ec2526d4c465b9"
+  },
+  "input": "mortadela400g",
+  "output": "ok,mortadela,400g. O valor é R$8,40. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c892fb2ec2526d4c465ba"
+  },
+  "input": "mortadela500g",
+  "output": "ok,mortadela,500g. O valor é R$10,50. Algo mais?(digite s para sim e n para não):"
+},{
+  "_id": {
+    "$oid": "5f8c8f0cb2ec2526d4c465bb"
+  },
+  "input": "s",
+  "output": " Escreva somente o nome do produto como na descrição, com letras minúsculas, coloque vírgula(sem espaço) e em seguida a quantidade(no máximo 10), por ex:  pao frances,1  ou leite,1 se for frios coloque gramas(100g,200g no máximo 500g) por ex: muçarela,200g. Se for refrigerante escreva qual ex: coca-cola,1. Sua vez!"
+},{
+  "_id": {
+    "$oid": "5f8c938eb2ec2526d4c465bf"
+  },
+  "input": "aceito",
+  "output": "Segue o link para pagamento https://www.paypal.com/br/home  nosso e-mail para pagamento : padariamelhorpao@email.com . Ao retirar seu pedido na Padaria melhor pão, apenas mostre o comprovante de pagamento e o codigo do pedido. Agradecemos a sua preferência! Que a força esteja com seu pão! "
+},{
+  "_id": {
+    "$oid": "5f8c9399b2ec2526d4c465c0"
+  },
+  "input": "rejeito",
+  "output": "Agradecemos a sua interação! Estamos á sua disposição!"
+},{
+  "_id": {
+    "$oid": "5f9f469b07999832245c0e7f"
+  },
+  "input": "ola",
+  "output": "Olá, eu sou o Padabot, assistente virtual da Padaria Melhor Pão! Estou aqui para melhor atendê-lo, evitando que você enfrente filas retirando seu pedido apenas com o comprovante de pagamento! Para começar me diga seu nome:"
+},{
+  "_id": {
+    "$oid": "5f9f46b507999832245c0e80"
+  },
+  "input": "bomdia",
+  "output": "Olá, eu sou o Padabot, assistente virtual da Padaria Melhor Pão! Estou aqui para melhor atendê-lo, evitando que você enfrente filas retirando seu pedido apenas com o comprovante de pagamento! Para começar me diga seu nome:"
+},{
+  "_id": {
+    "$oid": "5f9f46c107999832245c0e81"
+  },
+  "input": "boatarde",
+  "output": "Olá, eu sou o Padabot, assistente virtual da Padaria Melhor Pão! Estou aqui para melhor atendê-lo, evitando que você enfrente filas retirando seu pedido apenas com o comprovante de pagamento! Para começar me diga seu nome:"
+},{
+  "_id": {
+    "$oid": "5f9f46ce07999832245c0e82"
+  },
+  "input": "boanoite",
+  "output": "Olá, eu sou o Padabot, assistente virtual da Padaria Melhor Pão! Estou aqui para melhor atendê-lo, evitando que você enfrente filas retirando seu pedido apenas com o comprovante de pagamento! Para começar me diga seu nome:"
+},{
+  "_id": {
+    "$oid": "5fb043e963d9d61dfcab68a9"
+  },
+  "input": "joao",
+  "output": "Ok,João .Diga-me o que deseja: Pão Doce (R$0,80 cada), Pão Frances(R$0,30 cada), Leite(R$5,80 1Litro), Refrigerante(Coca R$10,00 - Fanta R$8,00), Frios(Muçarela-R$2,00-100g - presunto-R$1,80-100g - mortadela-R$2,20-100g) Escreva somente o nome do produto como na descrição, quantidade(no máximo 10), por ex:  Pão Frances,1  ou Leite,1 se for frios coloque gramas(100g,200g no máximo 500g) por ex: Muçarela,200g. Se for refrigerante escreva qual ex: coca-cola,1. Sua vez!"
+},{
+  "_id": {
+    "$oid": "5fb0440263d9d61dfcab68aa"
+  },
+  "input": "jose",
+  "output": "Ok,José .Diga-me o que deseja: Pão Doce (R$0,80 cada), Pão Frances(R$0,30 cada), Leite(R$5,80 1Litro), Refrigerante(Coca R$10,00 - Fanta R$8,00), Frios(Muçarela-R$2,00-100g - presunto-R$1,80-100g - mortadela-R$2,20-100g) Escreva somente o nome do produto como na descrição, quantidade(no máximo 10), por ex:  Pão Frances,1  ou Leite,1 se for frios coloque gramas(100g,200g no máximo 500g) por ex: Muçarela,200g. Se for refrigerante escreva qual ex: coca-cola,1. Sua vez!"
+},{
+  "_id": {
+    "$oid": "5fb14fa76577382cb8f25882"
+  },
+  "input": "n",
+  "output": "Digite 'aceito' ou 'rejeito'para finalizar"
+}]
