@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt/br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Padabot</title>
+    <style type="text/css">
+    
+        .dot{/*sinal verde de online*/
+            height: 13px;
+            width: 13px;
+            background-color: lightgreen;
+            border-radius: 50%;
+            display: inline-block;
+
+        }
+
+     /*balão de diálogo*/
+        .talk-bubble{
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            height: auto;
+            color: white;
+        }
+
+    .tri-right.border.left-top:before{
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: -40px;
+        right: auto;
+        top: -8px;
+        bottom: auto;
+        border: 32px solid;
+        border-color: #666 transparent transparent transparent;
+
+    }
+
+    .tri-right.border.left-top:after{
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: -20px;
+        right: auto;
+        top: -0px;
+        bottom: auto;
+        border: 22px solid;
+        border-color: #666 transparent transparent transparent;
+
+    }
+
+    .tri-right.border.right-top:before{
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: auto;
+        right: -40px;
+        top: -8px;
+        bottom: auto;
+        border: 32px solid;
+        border-color: #666 transparent transparent transparent;
+
+    }
+    .tri-right.border.right-top:after{
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: auto;
+            right: -20px;
+            top: 0px;
+            bottom: auto;
+            border: 20px solid;
+            border-color: #8000ff transparent transparent transparent;
+
+    }
+
+    .talktext{
+        padding: 1em;
+        text-align: left;
+        line-height: 1.5em;
+
+    } 
+    
+    .talktext p{
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+    }
+    #DivBotao{
+        position:relative;
+        float: left;
+    }
+    #DivInput{
+        position: relative;
+        width: 450px;
+        left:0px;
+        float: left;
+        bottom: 0;
+    }
+    .group{
+        position: fixed;
+        bottom:10px;
+    }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-info">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link text-white">
+                <span class="dot"></span>&nbsp; Chatbot está on line
+            </a>
+        </li>
+    </ul>
+</nav>
+<br>
+<div>
+    <div class="talk-bubble tri-right left-top" style="width: 90%; padding: 5px; background-color: #00aabb;"> 
+        <p>Olá! Em que posso ajudar?</p>
+    </div><br><br>
+    <div id="results" style="display: none;">
+    </div>
+</div>
+<div class="group">
+    <div id="DivInput"><input type="text" id="pergunta" class="form-control" 
+        placeholder="Digite Sua mensagem e aperte Enter"></div>
+    <div id="DivBotao"><button class="btn btn-success" id="botao" style="border-radius: 50%;" type="submit"
+        onclick="perguntar(); saveOrder();">></button></div>
+</div>
+</div>
+<script>
+    let pedido = [];
+    let valorTotalDoPedido = 0;
+    function perguntar(){
+        let parametroInput1 = document.getElementById('pergunta').value;
+        let parametroInput= parametroInput1.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-zA-Z0-9\s]/g, "").replace(/\s+/g, '').trim();
+        const pergunta = document.getElementById('pergunta').value;
+        var data = "";
+        var config = {
+            method: "get",
+            url: `http://localhost:3000/chatbot/find?input=${parametroInput}`,
+            headers: {},
+            data: data,
+        };
+
+       axios(config)
+            .then(function (response) {
+                 showResults(response.data[0].output);
+                 getInput();
+                
+            })
+            .catch(function (error) {
+                showResultsNull();
+            });
+           
+    } 
+    function showResults(resposta) {
+        document.getElementById('results').style.display = "block";
+        document.getElementById('pergunta').innerHTML;
+        document.getElementById('results').innerHTML +=
+            
+           `
+            <div class="talk-bubble tri-right right-top" style="width: 90%; background-color: #00a86b;">
+            <div class="talktext">
+                <p>${pergunta.value}</p>
+            </div>
+            </div>
+            <br>
+            <br>
+           
+            <div class="talk-bubble tri-right left-top" style="width: 90%; background-color: #00aabb;">
+            <div class="talktext">
+                <p>${resposta}</p>
+            </div>
+            </div>
+            <br>
+            <br>
+            <a href="#" id="end">
+           
+            
+        `; window.location.href = '#end';
+
+       } 
+
+    function showResultsNull(resposta) {
+
+        document.getElementById('results').style.display = "block";
+        document.getElementById('pergunta').innerHTML;
+        document.getElementById('results').innerHTML +=
+        `
+        <div class="talk-bubble tri-right right-top" style="width: 90%; background-color: #00a86b;">
+        <div class="talktext">
+            <p>${pergunta.value}</p>
+        </div>
+        </div>
+        <br>
+        <br>
+     
+        <div class="talk-bubble tri-right left-top" style="width: 90%; background-color: #00aabb;">
+        <div class="talktext">
+            <p>Desculpe, não consegui entender</p>
+        </div>
+        </div>
+        <br>
+        <br>
+        <a href="#" id="end">
+      
+
+    `;
+      window.location.href = '#end';
+    } 
+    function getInput(result){
+            pedido.push(pergunta.value); 
+            
+    };
+
+    function saveOrder(){
+        if((pergunta.value)=="n"){
+        let codigoPedido = cod();
+        TotalValueOfOrder(); 
+            document.getElementById('results').style.display = "block";
+            document.getElementById('pergunta').innerHTML;
+            document.getElementById('results').innerHTML +=
+                `
+        <div class="talk-bubble tri-right right-top" style="width: 90%; background-color: #00a86b;">
+        <div class="talktext">
+            <p>${pergunta.value}</p>
+        </div>
+        </div>
+        <br>
+        <br>
+     
+        <div class="talk-bubble tri-right left-top" style="width: 90%; background-color: #00aabb;">
+        <div class="talktext">
+            <p>o Codigo do seu pedido é ${codigoPedido}</p>
+            <p>Resumo do pedido:  ${pedido}</p>
+            <p>o valor total do seu pedido fica: R$ ${valorTotalDoPedido}</p>
+            <p>digite "aceito" para confirmar ou "rejeito" para não:</p>
+        </div>
+        </div>
+        <br>
+        <br>
+        <a href="#" id="end">
+      
+
+    `;
+            window.location.href = '#end';
+       
+       
+       
+        //salvar bd
+        };
+    };
+
+    function TotalValueOfOrder(){
+    //valores unitarios
+        let valorLeite = 5.80;
+        let valorPaoDoce = 0.80;
+        let valorPaoFrances=0.30;
+        let valorFanta = 8.00;
+        let valorCoca = 10.00;
+        let valorMucarela=2.00;
+        let valorPresunto = 1.80;
+        let valorMortadela = 2.20;
+
+        //buscas para o produto LEITE
+        if (pedido.indexOf('leite1') >= 0) {
+         valorTotalDoPedido+=valorLeite*1;
+        };
+        if(pedido.indexOf('leite2') >= 0){
+         valorTotalDoPedido += valorLeite*2;
+        };
+         if (pedido.indexOf('leite3') >= 0) {
+            valorTotalDoPedido += valorLeite * 3;
+        };
+        if (pedido.indexOf('leite4') >= 0) {
+            valorTotalDoPedido += valorLeite * 4;
+        };
+         if (pedido.indexOf('leite5') >= 0) {
+            valorTotalDoPedido += valorLeite * 5;
+        };
+        if (pedido.indexOf('leite6') >= 0) {
+            valorTotalDoPedido += valorLeite * 6;
+        };
+         if (pedido.indexOf('leite7') >= 0) {
+            valorTotalDoPedido += valorLeite * 7;
+        };
+        if (pedido.indexOf('leite8') >= 0) {
+            valorTotalDoPedido += valorLeite * 8;
+        };
+        if (pedido.indexOf('leite9') >= 0) {
+            valorTotalDoPedido += valorLeite * 9;
+        };
+        if (pedido.indexOf('leite10') >= 0) {
+            valorTotalDoPedido += valorLeite * 10;
+        };
+        
+        //buscas para o produto PÃO DOCE
+                if (pedido.indexOf('paodoce1') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 1;
+        };
+        if (pedido.indexOf('paodoce2') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 2;
+        };
+        if (pedido.indexOf('paodoce3') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 3;
+        };
+        if (pedido.indexOf('paodoce4') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 4;
+        };
+        if (pedido.indexOf('paodoce5') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 5;
+        };
+        if (pedido.indexOf('paodoce6') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 6;
+        };
+        if (pedido.indexOf('paodoce7') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 7;
+        };
+        if (pedido.indexOf('paodoce8') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 8;
+        };
+        if (pedido.indexOf('paodoce9') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 9;
+        };
+        if (pedido.indexOf('paodoce10') >= 0) {
+            valorTotalDoPedido += valorPaoDoce * 10;
+        };
+        //buscas para o produto PÃO FRANCES
+        if (pedido.indexOf('paofrances1') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 1;
+        };
+        if (pedido.indexOf('paofrances2') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 2;
+        };
+        if (pedido.indexOf('paofrances3') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 3;
+        };
+        if (pedido.indexOf('paofrances4') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 4;
+        };
+        if (pedido.indexOf('paofrances5') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 5;
+        };
+        if (pedido.indexOf('paofrances6') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 6;
+        };
+        if (pedido.indexOf('paofrances7') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 7;
+        };
+        if (pedido.indexOf('paofrances8') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 8;
+        };
+        if (pedido.indexOf('paofrances9') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 9;
+        };
+        if (pedido.indexOf('paofrances10') >= 0) {
+            valorTotalDoPedido += valorPaoFrances * 10;
+        };
+        //buscas para o produto COCA-COLA
+        if (pedido.indexOf('cocacola1') >= 0) {
+            valorTotalDoPedido += valorCoca * 1;
+        };
+        if (pedido.indexOf('cocacola2') >= 0) {
+            valorTotalDoPedido += valorCoca * 2;
+        };
+        if (pedido.indexOf('cocacola3') >= 0) {
+            valorTotalDoPedido += valorCoca * 3;
+        };
+        if (pedido.indexOf('cocacola4') >= 0) {
+            valorTotalDoPedido += valorCoca * 4;
+        };
+        if (pedido.indexOf('cocacola5') >= 0) {
+            valorTotalDoPedido += valorCoca * 5;
+        };
+        if (pedido.indexOf('cocacola6') >= 0) {
+            valorTotalDoPedido += valorCoca * 6;
+        };
+        if (pedido.indexOf('cocacola7') >= 0) {
+            valorTotalDoPedido += valorCoca * 7;
+        };
+        if (pedido.indexOf('cocacola8') >= 0) {
+            valorTotalDoPedido += valorCoca * 8;
+        };
+        if (pedido.indexOf('cocacola9') >= 0) {
+            valorTotalDoPedido += valorCoca * 9;
+        };
+        if (pedido.indexOf('cocacola10') >= 0) {
+            valorTotalDoPedido += valorCoca * 10;
+        };
+        //buscas para o produto FANTA
+                if (pedido.indexOf('fanta1') >= 0) {
+            valorTotalDoPedido += valorFanta * 1;
+        };
+        if (pedido.indexOf('fanta2') >= 0) {
+            valorTotalDoPedido += valorFanta * 2;
+        };
+        if (pedido.indexOf('fanta3') >= 0) {
+            valorTotalDoPedido += valorFanta * 3;
+        };
+        if (pedido.indexOf('fanta4') >= 0) {
+            valorTotalDoPedido += valorFanta * 4;
+        };
+        if (pedido.indexOf('fanta5') >= 0) {
+            valorTotalDoPedido += valorFanta * 5;
+        };
+        if (pedido.indexOf('fanta6') >= 0) {
+            valorTotalDoPedido += valorFanta * 6;
+        };
+        if (pedido.indexOf('fanta7') >= 0) {
+            valorTotalDoPedido += valorFanta * 7;
+        };
+        if (pedido.indexOf('fanta8') >= 0) {
+            valorTotalDoPedido += valorFanta * 8;
+        };
+        if (pedido.indexOf('fanta9') >= 0) {
+            valorTotalDoPedido += valorFanta * 9;
+        };
+        if (pedido.indexOf('fanta10') >= 0) {
+            valorTotalDoPedido += valorFanta * 10;
+        };
+        //buscas para o produto MUÇARELA
+                if (pedido.indexOf('mucarela100g') >= 0) {
+            valorTotalDoPedido += valorMucarela * 1;
+        };
+        if (pedido.indexOf('mucarela200g') >= 0) {
+            valorTotalDoPedido += valorMucarela * 2;
+        };
+        if (pedido.indexOf('mucarela300g') >= 0) {
+            valorTotalDoPedido += valorMucarela * 3;
+        };
+        if (pedido.indexOf('mucarela400g') >= 0) {
+            valorTotalDoPedido += valorMucarela * 4;
+        };
+        if (pedido.indexOf('mucarela500g') >= 0) {
+            valorTotalDoPedido += valorMucarela * 5;
+        };
+       
+        //buscas para o produto PRESUNTO
+        if (pedido.indexOf('presunto100g') >= 0) {
+            valorTotalDoPedido += valorPresunto * 1;
+        };
+        if (pedido.indexOf('presunto200g') >= 0) {
+            valorTotalDoPedido += valorPresunto * 2;
+        };
+        if (pedido.indexOf('presunto300g') >= 0) {
+            valorTotalDoPedido += valorPresunto * 3;
+        };
+        if (pedido.indexOf('presunto400g') >= 0) {
+            valorTotalDoPedido += valorPresunto * 4;
+        };
+        if (pedido.indexOf('presunto500g') >= 0) {
+            valorTotalDoPedido += valorPresunto * 5;
+        };
+       
+        //buscas para o produto MORTADELA
+                if (pedido.indexOf('mortadela100g') >= 0) {
+            valorTotalDoPedido += valorMortadela * 1;
+        };
+        if (pedido.indexOf('mortadela200g') >= 0) {
+            valorTotalDoPedido += valorMortadela * 2;
+        };
+        if (pedido.indexOf('mortadela300g') >= 0) {
+            valorTotalDoPedido += valorMortadela * 3;
+        };
+        if (pedido.indexOf('mortadela400g') >= 0) {
+            valorTotalDoPedido += valorMortadela * 4;
+        };
+        if (pedido.indexOf('mortadela500g') >= 0) {
+            valorTotalDoPedido += valorMortadela * 5;
+        };
+      
+       
+
+        return valorTotalDoPedido;
+    };
+
+    function cod() {
+            try {
+                const data = new Date();
+                const ano = data.getFullYear();
+                const mes = data.getMonth();
+                const dia = data.getDate();
+                const hora = data.getHours();
+                const minuto = data.getMinutes();
+                const segundo = data.getSeconds();
+                const milissegundos = data.getMilliseconds();
+                const result = Number(
+                    ano +
+                    "" +
+                    mes +
+                    "" +
+                    dia +
+                    "" +
+                    hora +
+                    "" +
+                    minuto +
+                    "" +
+                    segundo +
+                    "" +
+                    milissegundos
+                );
+                return result;
+            } catch (e) {
+                return 0;
+            }
+        }
+
+</script>
+</body>
+</html>
